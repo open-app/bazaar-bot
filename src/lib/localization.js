@@ -19,6 +19,11 @@ const translations = {
     es: 'Cancelar',
     en: 'Cancel',
   },
+  error: {
+    pt: 'Tivemos um problema',
+    es: 'Hemos tenido un problema',
+    en: 'There was a problem',
+  },
   welcome: {
     pt: 'Bem vindo ao bazar da comunidade',
     es: 'Bienvenido al bazar de la comunidad',
@@ -129,9 +134,8 @@ const translations = {
 
 module.exports = (ctx, obj) => {
   let lang = null
-  if (ctx.message && ctx.message.from) {
-    lang = ctx.message.from.language_code.split('-')[0]
+  if (ctx.state.user) {
+    lang = ctx.state.user.language_code.split('-')[0]
   }
-  // console.log('CTX', ctx.message.from.language_code)
   return translations[obj][lang || process.env.DEFAULT_LOCAL || 'en']
 }

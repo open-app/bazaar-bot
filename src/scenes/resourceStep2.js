@@ -8,16 +8,16 @@ const moveOn = async (ctx) => {
   const formatedPrice = () => {
     switch(newExchange) {
       case 1:
-        return '0'
+        return '❤'
       case 2:
         return `${resourcePrice} ${process.env.COMMUNITY_CURRENCY}`
       case 3:
-        return `${resourcePrice} ${process.env.FIAT_CURRENCY} & ${resourcePrice2} ${process.env.COMMUNITY_CURRENCY}`
+        return `${resourcePrice} ${process.env.COMMUNITY_CURRENCY} & ${resourcePrice2} ${process.env.FIAT_CURRENCY}`
       case 4:
         return `${resourcePrice} ${process.env.FIAT_CURRENCY}`
     }
   }
-  await ctx.replyWithMarkdown(`@${ctx.update.message.from.username}:        \`${newResource}\`                       ${formatedPrice()}`)
+  await ctx.replyWithMarkdown(`@${ctx.update.message.from.username}: \`${newResource}\` ${formatedPrice()}`)
   ctx.reply(i18n(ctx, 'newHelp3'), Markup.inlineKeyboard([
     Markup.callbackButton(i18n(ctx, 'yes'), 'yes'),
     Markup.callbackButton(i18n(ctx, 'no'), 'no'),

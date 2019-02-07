@@ -5,7 +5,8 @@ const i18n = require('../lib/localization')
 
 stepHandler.action('opt1', (ctx) => {
   ctx.scene.state.newExchange = 1
-  return ctx.wizard.next()
+  ctx.wizard.next()
+  return ctx.reply('❤❤❤❤❤')
 })
 stepHandler.action('opt2', (ctx) => {
   ctx.scene.state.newExchange = 2
@@ -30,7 +31,7 @@ stepHandler.use((ctx) => {
     Markup.callbackButton(i18n(ctx, 'newOpt2'), 'opt2'),
     Markup.callbackButton(i18n(ctx, 'newOpt3'), 'opt3'),
     Markup.callbackButton(i18n(ctx, 'newOpt4'), 'opt4'),
-  ]).extra())
+  ], { columns: 2 }).extra())
 })
 
 module.exports = stepHandler

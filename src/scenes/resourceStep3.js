@@ -6,6 +6,7 @@ const { publishResource } = require('../api')
 
 stepHandler.action('yes', async (ctx) => {
   const { newExchange, resourcePrice, newResource, resourcePrice2 } = ctx.scene.state
+  const { username, first_name } = ctx.scene.state.user
   const prices = () => {
     switch(newExchange) {
       case 1:
@@ -18,13 +19,21 @@ stepHandler.action('yes', async (ctx) => {
         return [`${resourcePrice},${process.env.FIAT_CURRENCY}`]
     }
   }
-  await publishResource({ input: {
-    owner: ctx.update.callback_query.from.username,
-    category: newResource,
-    prices: prices(),
-  }})
-  ctx.reply(i18n(ctx, 'done'))
-  return ctx.scene.leave()
+  const owner = username || first_name
+  try {
+    await publishResource({ input: {
+      owner,
+      category: newResource,
+      prices: prices(),
+    }})
+    ctx.reply(i18n(ctx, 'done'))
+    return ctx.scene.leave()
+  }
+  catch (err) {
+    console.log('ERROR', err)
+    ctx.reply(i18n(ctx, 'error'))
+    return ctx.scene.leave()
+  }
 })
 stepHandler.action('no', (ctx) => {
   ctx.reply(i18n(ctx, 'cancel'))
