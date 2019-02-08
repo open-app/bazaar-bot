@@ -4,16 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src",
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
+    "bazaar-graphql": "0.0.6",
     "dotenv": "^6.2.0",
+    "economic-sentences-graphql": "^1.0.4",
     "graphql-request": "^1.8.2",
     "node-fetch": "^2.3.0",
-    "telegraf": "^3.27.0"
+    "open-app-graphql-server": "^1.1.0",
+    "ssb-graphql-defaults": "^2.0.0",
+    "telegraf": "^3.27.1"
   }
 }
