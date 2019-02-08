@@ -3,6 +3,8 @@
 Telegram Bot for facilitating local community markets.
 
 ## Usage
+To use the Telegram Bot API, you first have to get a bot account by [chatting with BotFather](https://core.telegram.org/bots#6-botfather).
+
 ```
 docker run -d --name bazaar-bot \
   -v ~/ssb-data/:/home/node/.ssb/ \
