@@ -13,6 +13,7 @@ const exchange = require('./scenes/exchange')
 const { leave } = Stage
 
 const welcomeSwitch = (ctx) => {
+  if (!ctx.message) return null
   switch(ctx.message.text.split(`\n`)[0]) {
     case '📄':
       return ctx.scene.enter('list')
@@ -55,10 +56,13 @@ bot.use(async (ctx, next) => {
   console.log('Response time %sms', ms)
 })
 stage.command('cancel', leave())
+bot.start((ctx) => {
+  return ctx.scene.enter('welcome')
+})
 bot.on('message', (ctx) => {
   const action = welcomeSwitch(ctx)
   if(!action) {
-    ctx.scene.enter('welcome')
+    return ctx.scene.enter('welcome')
   }
 })
 bot.startPolling()

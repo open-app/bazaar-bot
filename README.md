@@ -16,6 +16,6 @@ docker run -d --name bazaar-bot \
   -e APP_KEY="secret" \
   -p 4000:4000 \
   --restart unless-stopped \
-  communityfirst/bazaar-bot
+  communityfirst/bazaar-bot:alpha
 ```
 Or Rename the `.env.sample` file to `.env` and edit it with needed configuration.
