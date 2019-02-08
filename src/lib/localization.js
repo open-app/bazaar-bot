@@ -9,6 +9,11 @@ const translations = {
     es: 'No',
     en: 'No',
   },
+  to: {
+    pt: 'para',
+    es: 'a',
+    en: 'to',
+  },
   done: {
     pt: 'Pronto',
     es: 'Listo',
@@ -23,6 +28,16 @@ const translations = {
     pt: 'Tivemos um problema',
     es: 'Hemos tenido un problema',
     en: 'There was a problem',
+  },
+  empty: {
+    pt: 'Nada foi publicado',
+    es: 'No se ha publicado nada',
+    en: 'Nothing has been published',
+  },
+  other: {
+    pt: 'Outro',
+    es: 'Otro',
+    en: 'Other',
   },
   welcome: {
     pt: 'Bem vindo ao bazar da comunidade',
@@ -56,18 +71,18 @@ const translations = {
   },
   newHelp1: {
     pt: 'Qual o nome do produto ou serviço que gostaria de publicar?',
-    es: 'nuevo',
-    en: 'new',
+    es: 'Cuál es el nombre del producto o servicio que desea publicar?',
+    en: 'What\'s the name of the product of service woul\'d like to publish?' ,
   },
   newHelp2: {
     pt: 'É uma troca solidária ou gostaria de receber em troca?',
-    es: 'nuevo',
-    en: 'new',
+    es: 'Es un intercambio solidario o quisiera recibir a cambio?',
+    en: 'Is it a solidary offer or would you like to receive in return?',
   },
   newHelp3: {
     pt: 'Assim será sua publicação, confirma?',
-    es: 'nuevo',
-    en: 'new',
+    es: 'Assim será sua publicação, confirma?',
+    en: 'This is what you\'re publications will look, ok?',
   },
   newOpt1: {
     pt: 'Solidária',
@@ -103,6 +118,31 @@ const translations = {
     pt: 'trocar',
     es: 'cambiar',
     en: 'exchange',
+  },
+  excHelp1: {
+    pt: 'Para qual usuário gostaria de enviar?',
+    es: 'Para qué usuario desea enviar?',
+    en: 'To which user would you like to send?',
+  },
+  excHelp2: {
+    pt: 'Qual o nome do usuário?',
+    es: 'Cuál es el nombre del usuario?',
+    en: 'What is the user\'s name?',
+  },
+  excHelp3: {
+    pt: `Quantos ${process.env.COMMUNITY_CURRENCY} gostaria de enviar?`,
+    es: `Cuántos ${process.env.COMMUNITY_CURRENCY} quisiera enviar?`,
+    en: `How much ${process.env.COMMUNITY_CURRENCY} would you like to send?`,
+  },
+  excHelp4: {
+    pt: 'Certeza que gostaria de enviar',
+    es: 'Seguro que gustaría enviar',
+    en: 'Are you sure woul\'d like to send',
+  },
+  excHelp5: {
+    pt: 'Seu saldo é de',
+    es: 'Su saldo es de',
+    en: 'You\'re balance is',
   },
   unpublish: {
     pt: 'tirar',

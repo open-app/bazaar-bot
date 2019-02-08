@@ -9,13 +9,6 @@ module.exports = `
           value
         }
       }
-      receiver {
-        username
-        balance {
-          currency
-          value
-        }
-      }
     }
   }
 `

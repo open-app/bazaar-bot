@@ -1,6 +1,6 @@
 const { GraphQLClient } = require('graphql-request')
 const endpoint = process.env.SBOT_API || `http://localhost:4000/graphql`
-const client = new GraphQLClient(endpoint, { headers: {} })
+const client = new GraphQLClient(endpoint, { headers: { KEY: process.env.SBOT_KEY }})
 const listQuery = require('./queries/list')
 const publishQuery = require('./queries/publishResource')
 const unpublishQuery = require('./queries/unpublishResource')
@@ -19,6 +19,7 @@ const transaction = (variables) => {
     .then(data => {
       return data.transaction
     })
+    .catch(err => console.log('ERROR', err))
 }
 
 const getPublishedResources = async () => {
@@ -44,7 +45,9 @@ const publishResource = async (variables) => {
 }
 const unpublishResource = async (id) => {
   return client.request(unpublishQuery, { id })
-    .then(data => data.unpublishResource)
+    .then(data => {
+      return data.unpublishResource
+    })
 }
 
 module.exports = {

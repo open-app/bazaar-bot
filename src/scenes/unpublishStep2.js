@@ -6,9 +6,14 @@ const { unpublishResource } = require('../api')
 
 stepHandler.action('yes', async (ctx) => {
   const { unpublishId } = ctx.scene.state
-  await unpublishResource(unpublishId)
-  ctx.reply(i18n(ctx, 'done'))
-  return ctx.scene.leave()
+  try {
+    await unpublishResource(unpublishId)
+    ctx.reply(i18n(ctx, 'done'))
+    return ctx.scene.leave()
+  } catch (err) {
+    ctx.reply(i18n(ctx, 'error'))
+    return ctx.scene.leave()
+  }
 })
 stepHandler.action('no', (ctx) => {
   ctx.reply(i18n(ctx, 'cancel'))

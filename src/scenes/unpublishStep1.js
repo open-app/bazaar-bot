@@ -12,7 +12,7 @@ stepHandler.use((ctx) => {
     .map(i => Object.values(i)[0])[0]
   
   ctx.scene.state.unpublishId = id
-  ctx.reply(i18n(ctx, 'unpHelp2'), Markup.inlineKeyboard([
+  ctx.reply(`${i18n(ctx, 'unpHelp2')} ${ctx.update.callback_query.data}?`, Markup.inlineKeyboard([
     Markup.callbackButton(i18n(ctx, 'yes'), 'yes'),
     Markup.callbackButton(i18n(ctx, 'no'), 'no'),
   ]).extra())

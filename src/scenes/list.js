@@ -12,7 +12,7 @@ list.enter((async ctx => {
   if (list.length > 0) {
     await ctx.replyWithMarkdown(list.join('\n') + '\n' + i18n(ctx, 'resourcesAdd'))
   } else {
-    await ctx.replyWithMarkdown(`Nada foi publicado.\n${i18n(ctx, 'resourcesAdd')}`)
+    await ctx.replyWithMarkdown(`${i18n(ctx, 'empty')}.\n${i18n(ctx, 'resourcesAdd')}`)
   }
   return ctx.scene.leave()
 }))
