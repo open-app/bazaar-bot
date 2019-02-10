@@ -60,14 +60,14 @@ const translations = {
     en:'Select what you\'d like to do:',
   },
   list: {
-    pt: 'listar',
-    es: 'listar',
-    en: 'list',
+    pt: 'Listar pubicações',
+    es: 'Listar ofertas',
+    en: 'List publications',
   },
   new: {
-    pt: 'novo',
-    es: 'nuevo',
-    en: 'new',
+    pt: 'Publicar um bem',
+    es: 'Añadir bien',
+    en: 'Publish a good',
   },
   newHelp1: {
     pt: 'Qual o nome do produto ou serviço que gostaria de publicar?',
@@ -115,9 +115,9 @@ const translations = {
     en: `What is the value in ${process.env.FIAT_CURRENCY}?`,
   },
   exchange: {
-    pt: 'trocar',
-    es: 'cambiar',
-    en: 'exchange',
+    pt: 'Enviar',
+    es: 'Enviar',
+    en: 'Send',
   },
   excHelp1: {
     pt: 'Para qual usuário gostaria de enviar?',
@@ -145,9 +145,9 @@ const translations = {
     en: 'You\'re balance is',
   },
   unpublish: {
-    pt: 'tirar',
-    es: 'sacar',
-    en: 'unpublish',
+    pt: 'Retirar um bem',
+    es: 'Eliminar bien',
+    en: 'Unpublish a good',
   },
   unpHelp1: {
     pt: 'Qual deseja retirar?',
@@ -160,14 +160,14 @@ const translations = {
     en: 'Are you sure you\'d like to unpublish',
   },
   me: {
-    pt: 'eu',
-    es: 'yo',
-    en: 'me'
+    pt: 'Meu saldo',
+    es: 'Mi balance',
+    en: 'My balance'
   },
   check: {
-    pt: 'checar',
-    es: 'mirar',
-    en: 'check',
+    pt: 'Bucar usuari@',
+    es: 'Buscar usuari@',
+    en: 'Seach for user',
   },
   
 }
