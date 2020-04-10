@@ -6,10 +6,9 @@ const i18n = require('../lib/localization')
 
 const resource = new WizardScene(
   'resource-wizard',
-  ctx => {
-    console.log('ctx', ctx.wizard)
+  async ctx => {
     ctx.scene.state.user = ctx.from
-    ctx.reply(i18n(ctx, 'newHelp1'))
+    await ctx.reply(i18n(ctx, 'newHelp1'))
     return ctx.wizard.next()
   },
   step1,

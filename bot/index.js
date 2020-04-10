@@ -12,8 +12,6 @@ const exchange = require('./scenes/exchange')
 const { leave } = Stage
 
 const welcomeSwitch = ctx => {
-  console.log('welcomeSwitch -> ctx', ctx)
-  console.log('FROM', ctx.contextState.user.username)
   console.log(
     '------------------------------------------------------------------------'
   )

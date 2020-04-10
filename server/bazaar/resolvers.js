@@ -17,7 +17,7 @@ function sum (obj, src) {
 
 module.exports = (sbot, scope) => {
   const getResourceClassfication = async id => {
-    const resourceClassification = await message({ id })
+    const resourceClassification = await message({ id }, sbot)
     return Object.assign(
       { key: resourceClassification.key },
       resourceClassification.value.content
