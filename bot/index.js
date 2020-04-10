@@ -1,4 +1,4 @@
-require("dotenv").config()
+require('dotenv').config()
 const Telegraf = require('telegraf')
 const session = require('telegraf/session')
 const Stage = require('telegraf/stage')
@@ -12,9 +12,11 @@ const exchange = require('./scenes/exchange')
 
 const { leave } = Stage
 
-const welcomeSwitch = (ctx) => {
+const welcomeSwitch = ctx => {
+  // console.log('welcomeSwitch -> ctx', ctx)
+  console.log('FROM', ctx.contextState.user.username)
   if (!ctx.message) return null
-  switch(ctx.message.text.split(`\n`)[0]) {
+  switch (ctx.message.text.split(`\n`)[0]) {
     case '📄':
       return ctx.scene.enter('list')
     case '➕':
@@ -33,7 +35,7 @@ const welcomeSwitch = (ctx) => {
 }
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
-bot.catch((err) => {
+bot.catch(err => {
   console.log('Ooops', err)
 })
 const stage = new Stage()
@@ -42,12 +44,12 @@ bot.use(session())
 bot.use(stage.middleware())
 bot.use(async (ctx, next) => {
   if (ctx.message && ctx.message.from) {
-    const { id, first_name, username, language_code, } = ctx.message.from
+    const { id, first_name, username, language_code } = ctx.message.from
     ctx.state.user = {
       id,
       first_name,
       username,
-      language_code,
+      language_code
     }
   }
   const start = new Date()
@@ -56,12 +58,12 @@ bot.use(async (ctx, next) => {
   console.log('Response time %sms', ms)
 })
 stage.command('cancel', leave())
-bot.start((ctx) => {
+bot.start(ctx => {
   return ctx.scene.enter('welcome')
 })
-bot.on('message', (ctx) => {
+bot.on('message', ctx => {
   const action = welcomeSwitch(ctx)
-  if(!action) {
+  if (!action) {
     return ctx.scene.enter('welcome')
   }
 })

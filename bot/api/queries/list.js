@@ -1,6 +1,6 @@
 module.exports = `
   query {
-    publishedResources {
+    economicResources {
       key
       category
       prices {
