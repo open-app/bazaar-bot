@@ -13,7 +13,7 @@ chown -R 1000:1000 ~/ssb-bazaar-data
 Run the image
 ```
 docker run -d --name bazaar-bot \
-  -v ~/ssb-bazaar-data/:/root/.ssb/ \
+  -v ~/ssb-bazaar-data/:/root/.ssb-bazaarbot/ \
   -e BOT_TOKEN="xxx-xxx-xx" \
   -e COMMUNITY_CURRENCY="SHELL" \
   -e FIAT_CURRENCY="Dollars" \
