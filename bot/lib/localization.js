@@ -174,7 +174,7 @@ const translations = {
 module.exports = (ctx, obj) => {
   const availableLangs = ['pt', 'es', 'en']
   const defaultLang = process.env.DEFAULT_LOCAL || 'en'
-  if (ctx.state.user) {
+  if (ctx.state.user && ctx.state.user.language_code) {
     const userLang = ctx.state.user.language_code.split('-')[0]
     const isLang = availableLangs.filter(l => l === userLang)
     if (isLang.length > 0) {
