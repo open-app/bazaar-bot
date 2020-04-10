@@ -1,4 +1,3 @@
-require('dotenv').config()
 const Telegraf = require('telegraf')
 const session = require('telegraf/session')
 const Stage = require('telegraf/stage')
@@ -13,8 +12,11 @@ const exchange = require('./scenes/exchange')
 const { leave } = Stage
 
 const welcomeSwitch = ctx => {
-  // console.log('welcomeSwitch -> ctx', ctx)
+  console.log('welcomeSwitch -> ctx', ctx)
   console.log('FROM', ctx.contextState.user.username)
+  console.log(
+    '------------------------------------------------------------------------'
+  )
   if (!ctx.message) return null
   switch (ctx.message.text.split(`\n`)[0]) {
     case '📄':

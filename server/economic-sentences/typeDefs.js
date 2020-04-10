@@ -10,11 +10,6 @@ module.exports = gql`
     location: Place
     phone: String
     email: String
-    balance: Balance
-  }
-  type Balance {
-    currency: String
-    value: Int
   }
   type Place {
     names: [String]
@@ -82,10 +77,6 @@ module.exports = gql`
     note: Note
     category: String
     processCategory: String
-  }
-  type Price {
-    currency: String
-    value: Int
   }
   type EconomicResource {
     key: ID!

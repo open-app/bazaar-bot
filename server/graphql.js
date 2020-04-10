@@ -6,6 +6,8 @@ const cors = require('cors')
 const Main = require('@ssb-graphql/main')
 const Profile = require('@ssb-graphql/profile')
 const EconomicSentences = require('./economic-sentences')
+const Bazaar = require('./bazaar')
+const scope = process.env.SCOPE
 
 module.exports = {
   name: 'graphql-http-server',
@@ -17,6 +19,7 @@ module.exports = {
     const main = Main(sbot)
     const profile = Profile(sbot)
     const economicSentences = EconomicSentences(sbot)
+    const bazaar = Bazaar(sbot, scope)
     profile.Context((err, context) => {
       if (err) throw err
       const server = new ApolloServer({
@@ -32,6 +35,10 @@ module.exports = {
           {
             typeDefs: economicSentences.typeDefs,
             resolvers: economicSentences.resolvers
+          },
+          {
+            typeDefs: bazaar.typeDefs,
+            resolvers: bazaar.resolvers
           }
         ]),
         context,
