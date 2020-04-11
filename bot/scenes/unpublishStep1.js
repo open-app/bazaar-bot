@@ -4,7 +4,6 @@ const stepHandler = new Composer()
 const i18n = require('../lib/localization')
 
 stepHandler.use(ctx => {
-  console.log('ctx UPDATE', ctx.update)
   if (ctx.update.callback_query) {
     const action = ctx.update.callback_query.data
     const id = ctx.scene.state.categories

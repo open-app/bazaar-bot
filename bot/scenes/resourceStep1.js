@@ -2,11 +2,11 @@ const Composer = require('telegraf/composer')
 const Markup = require('telegraf/markup')
 const stepHandler = new Composer()
 const i18n = require('../lib/localization')
+const { moveOn } = require('./resourceStep2')
 
 stepHandler.action('opt1', ctx => {
   ctx.scene.state.newExchange = 1
-  ctx.wizard.next()
-  return ctx.reply('❤❤❤❤❤')
+  return moveOn(ctx)
 })
 stepHandler.action('opt2', ctx => {
   ctx.scene.state.newExchange = 2
@@ -25,10 +25,7 @@ stepHandler.action('opt4', ctx => {
 })
 
 stepHandler.use(ctx => {
-  console.log('ctx USE', ctx.message.text)
   ctx.scene.state.newResource = ctx.message.text
-  const msg = i18n(ctx, 'newHelp2')
-  console.log('GOT IT', msg)
   ctx.reply(
     i18n(ctx, 'newHelp2'),
     Markup.inlineKeyboard(

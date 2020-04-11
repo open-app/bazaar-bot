@@ -8,6 +8,7 @@ const check = require('./scenes/check')
 const resource = require('./scenes/resource')
 const unpublish = require('./scenes/unpublish')
 const exchange = require('./scenes/exchange')
+const i18n = require('./lib/localization')
 
 const { leave } = Stage
 
@@ -35,8 +36,10 @@ const welcomeSwitch = ctx => {
 }
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
-bot.catch(err => {
+bot.catch((err, ctx) => {
   console.log('Ooops', err)
+  ctx.reply(i18n(ctx, 'error'))
+  return ctx.scene.leave()
 })
 const stage = new Stage()
 stage.register(welcome, list, resource, me, check, unpublish, exchange)

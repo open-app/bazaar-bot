@@ -65,9 +65,9 @@ const translations = {
     en: 'List publications'
   },
   new: {
-    pt: 'Publicar um bem',
-    es: 'Añadir bien',
-    en: 'Publish a good'
+    pt: 'Publicar um produto ou serviço',
+    es: 'Añadir un producto o servicio',
+    en: 'Publish a product ou service'
   },
   newHelp1: {
     pt: 'Qual o nome do produto ou serviço que gostaria de publicar?',
@@ -75,9 +75,9 @@ const translations = {
     en: "What's the name of the product of service woul'd like to publish?"
   },
   newHelp2: {
-    pt: 'É uma troca solidária ou gostaria de receber em troca?',
-    es: 'Es un intercambio solidario o quisiera recibir a cambio?',
-    en: 'Is it a solidary offer or would you like to receive in return?'
+    pt: 'É uma doação ou gostaria de receber em troca?',
+    es: 'Es una donación o quieres recibir algo en cambio?',
+    en: 'Is it a donation or would you like to receive in return?'
   },
   newHelp3: {
     pt: 'Assim será sua publicação, confirma?',
@@ -85,9 +85,9 @@ const translations = {
     en: "This is what you're publications will look, ok?"
   },
   newOpt1: {
-    pt: 'Solidária',
-    es: 'Solidaria',
-    en: 'Solidary'
+    pt: 'Doação',
+    es: 'Donación',
+    en: 'Donation'
   },
   newOpt2: {
     pt: process.env.COMMUNITY_CURRENCY,

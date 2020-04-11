@@ -22,21 +22,18 @@ const moveOn = async ctx => {
         return `${resourcePrice} ${process.env.FIAT_CURRENCY}`
     }
   }
-  if (ctx.update.message.from) {
-    await ctx.replyWithMarkdown(
-      `@${
-        ctx.update.message.from.username
-      }: \`${newResource}\` ${formatedPrice()}`
-    )
-    ctx.reply(
-      i18n(ctx, 'newHelp3'),
-      Markup.inlineKeyboard([
-        Markup.callbackButton(i18n(ctx, 'yes'), 'yes'),
-        Markup.callbackButton(i18n(ctx, 'no'), 'no')
-      ]).extra()
-    )
-    return ctx.wizard.next()
-  }
+  const from = ctx.update.message
+    ? ctx.update.message.from.username
+    : ctx.update.callback_query.from.username
+  await ctx.replyWithMarkdown(`@${from}: \`${newResource}\` ${formatedPrice()}`)
+  ctx.reply(
+    i18n(ctx, 'newHelp3'),
+    Markup.inlineKeyboard([
+      Markup.callbackButton(i18n(ctx, 'yes'), 'yes'),
+      Markup.callbackButton(i18n(ctx, 'no'), 'no')
+    ]).extra()
+  )
+  return ctx.wizard.selectStep(3)
 }
 
 stepHandler.use(async ctx => {
@@ -61,4 +58,6 @@ stepHandler.use(async ctx => {
   }
 })
 
-module.exports = stepHandler
+const step2 = stepHandler
+
+module.exports = { moveOn, step2 }
