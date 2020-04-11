@@ -167,13 +167,23 @@ const translations = {
   },
   me: {
     pt: 'Meu saldo',
-    es: 'Mi balance',
+    es: 'Mi saldo',
     en: 'My balance'
   },
+  noBalance: {
+    pt: 'Usuário sem saldo',
+    es: 'Usuario sin saldo',
+    en: 'User with no balance'
+  },
   check: {
-    pt: 'Bucar usuari@',
-    es: 'Buscar usuari@',
-    en: 'Seach for user'
+    pt: 'Saldo do usuari@',
+    es: 'Saldo do usuari@',
+    en: 'User balance'
+  },
+  userCheck: {
+    pt: 'Qual o nome de usuario que gostaria de pesquisar?',
+    es: '¿Qué nombre de usuario te gustaría buscar?',
+    en: 'What username would you like to search for?'
   }
 }
 
