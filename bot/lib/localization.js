@@ -54,6 +54,12 @@ const translations = {
     es: 'Para agregar un nuevo uso el ➕',
     en: 'To add a new use the ➕'
   },
+  contactUser: {
+    pt: 'Entre em contato com o usuário para adquirir um produto ou serviço.',
+    es:
+      'Póngase en contacto con el usuario para comprar un producto o servicio.',
+    en: 'Contact the user to purchase a product or service.'
+  },
   select: {
     pt: 'Selecione oque gostaria de fazer:',
     es: 'Seleccione lo que desea hacer:',

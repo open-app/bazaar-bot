@@ -17,7 +17,13 @@ list.enter(async ctx => {
   })
   if (list.length > 0) {
     await ctx.replyWithMarkdown(
-      list.join('\n') + '\n' + i18n(ctx, 'resourcesAdd')
+      list.join('\n') +
+        '\n' +
+        '\n' +
+        i18n(ctx, 'contactUser') +
+        '\n' +
+        '\n' +
+        i18n(ctx, 'resourcesAdd')
     )
   } else {
     await ctx.replyWithMarkdown(
