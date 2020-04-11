@@ -4,7 +4,7 @@ const stepHandler = new Composer()
 const i18n = require('../lib/localization')
 const { unpublishResource } = require('../api')
 
-stepHandler.action('yes', async (ctx) => {
+stepHandler.action('yes', async ctx => {
   const { unpublishId } = ctx.scene.state
   try {
     await unpublishResource(unpublishId)
@@ -15,10 +15,9 @@ stepHandler.action('yes', async (ctx) => {
     return ctx.scene.leave()
   }
 })
-stepHandler.action('no', (ctx) => {
+stepHandler.action('no', ctx => {
   ctx.reply(i18n(ctx, 'cancel'))
-  return ctx.scene.leave()    
+  return ctx.scene.leave()
 })
-
 
 module.exports = stepHandler
