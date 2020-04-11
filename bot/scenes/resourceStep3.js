@@ -37,7 +37,8 @@ stepHandler.action('yes', async ctx => {
       }
     })
     ctx.reply(i18n(ctx, 'done'))
-    return ctx.scene.leave()
+    ctx.scene.leave()
+    return ctx.scene.enter('list')
   } catch (err) {
     console.log('ERROR', err)
     ctx.reply(i18n(ctx, 'error'))

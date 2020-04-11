@@ -3,7 +3,7 @@ const { gql } = require('apollo-server')
 module.exports = gql`
   type Price {
     currency: String
-    value: Int
+    value: Float
   }
   type Transaction {
     key: ID!

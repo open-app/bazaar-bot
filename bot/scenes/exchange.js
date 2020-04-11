@@ -48,7 +48,7 @@ module.exports = new WizardScene('exchange-wizard',
           provider: user.username || user.first_name,
           receiver: transactionUser,
           currency: process.env.COMMUNITY_CURRENCY,
-          value: parseInt(transactionValue),
+          value: parseFloat(transactionValue),
         })
         const balance = tx.provider.balance.map(i => `${i.value} ${i.currency}`).join(', ')
         ctx.replyWithMarkdown(`${i18n(ctx, 'excHelp5')}: ${balance}\n${i18n(ctx, 'done')}`)

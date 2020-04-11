@@ -2,6 +2,7 @@ const Composer = require('telegraf/composer')
 const Markup = require('telegraf/markup')
 const stepHandler = new Composer()
 const i18n = require('../lib/localization')
+const communityCurrency = require('../lib/communityCurrency')
 
 const moveOn = async ctx => {
   const {
@@ -42,18 +43,27 @@ stepHandler.use(async ctx => {
     case 1:
       return moveOn(ctx)
     case 2:
-      ctx.scene.state.resourcePrice = parseInt(ctx.update.message.text)
+      ctx.scene.state.resourcePrice = communityCurrency(ctx.update.message.text)
       return moveOn(ctx)
     case 3:
       if (!ctx.scene.state.resourcePrice) {
-        ctx.scene.state.resourcePrice = parseInt(ctx.update.message.text)
+        ctx.scene.state.resourcePrice = communityCurrency(
+          ctx.update.message.text
+        )
         return ctx.reply(i18n(ctx, 'newFiat'))
       } else {
-        ctx.scene.state.resourcePrice2 = parseInt(ctx.update.message.text)
+        ctx.scene.state.resourcePrice2 = communityCurrency(
+          ctx.update.message.text
+        )
         return moveOn(ctx)
       }
     case 4:
-      ctx.scene.state.resourcePrice = parseInt(ctx.update.message.text)
+      ctx.scene.state.resourcePrice = communityCurrency(ctx.update.message.text)
+      console.log(
+        'currency(ctx.update.message.text)',
+        communityCurrency(ctx.update.message.text)
+      )
+
       return moveOn(ctx)
   }
 })

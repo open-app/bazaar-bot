@@ -61,7 +61,7 @@ module.exports = (sbot, scope) => {
       .reduce((accumulator, currentValue) => {
         currentValue.value.content.affectedQuantity.map(price => {
           const c = price.split(',')[1]
-          const value = parseInt(price.split(',')[0])
+          const value = parseFloat(price.split(',')[0])
           let currentValue = accumulator[c]
           if (currentValue) {
             return Object.assign(accumulator, { [c]: currentValue + value })
@@ -75,7 +75,7 @@ module.exports = (sbot, scope) => {
       .reduce((accumulator, currentValue) => {
         currentValue.value.content.affectedQuantity.map(price => {
           const c = price.split(',')[1]
-          const value = parseInt(price.split(',')[0])
+          const value = parseFloat(price.split(',')[0])
           let currentValue = accumulator[c]
           if (currentValue) {
             return Object.assign(accumulator, { [c]: currentValue - value })

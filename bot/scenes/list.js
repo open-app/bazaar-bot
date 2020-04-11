@@ -9,7 +9,7 @@ list.enter(async ctx => {
     let { index, user, category, price } = item
     if (
       price.split('&').length === 1 &&
-      parseInt(price.split(process.env.COMMUNITY_CURRENCY)[0]) === 0
+      parseFloat(price.split(process.env.COMMUNITY_CURRENCY)[0]) === 0
     ) {
       price = i18n(ctx, 'newOpt1')
     }

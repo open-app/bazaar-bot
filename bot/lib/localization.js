@@ -66,14 +66,14 @@ const translations = {
     en: "Select what you'd like to do:"
   },
   list: {
-    pt: 'Listar pubicações',
+    pt: 'Listar publicações',
     es: 'Listar ofertas',
     en: 'List publications'
   },
   new: {
-    pt: 'Publicar um produto ou serviço',
-    es: 'Añadir un producto o servicio',
-    en: 'Publish a product ou service'
+    pt: 'Publicar',
+    es: 'Añadir',
+    en: 'Publish'
   },
   newHelp1: {
     pt: 'Qual o nome do produto ou serviço que gostaria de publicar?',
@@ -151,9 +151,9 @@ const translations = {
     en: "You're balance is"
   },
   unpublish: {
-    pt: 'Retirar um bem',
-    es: 'Eliminar bien',
-    en: 'Unpublish a good'
+    pt: 'Retirar',
+    es: 'Eliminar',
+    en: 'Unpublish'
   },
   unpHelp1: {
     pt: 'Qual deseja retirar?',
