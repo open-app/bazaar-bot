@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:12
 
 RUN npm install --quiet node-gyp -g
 RUN mkdir -p /usr/app
