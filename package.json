@@ -14,7 +14,7 @@
     "@apollo/federation": "^0.14.0",
     "@ssb-graphql/main": "^0.1.1",
     "@ssb-graphql/profile": "^0.6.0",
-    "apollo-server-express": "^2.12.0",
+    "apollo-server-express": "^2.14.2",
     "cors": "^2.8.5",
     "currency.js": "^1.2.2",
     "dotenv": "^8.2.0",
