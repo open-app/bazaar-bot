@@ -66,9 +66,9 @@ const translations = {
     en: "Select what you'd like to do:"
   },
   list: {
-    pt: 'Listar publicações',
-    es: 'Listar ofertas',
-    en: 'List publications'
+    pt: 'Publicações',
+    es: 'Ofertas',
+    en: 'Publications'
   },
   new: {
     pt: 'Publicar',
