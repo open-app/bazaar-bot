@@ -25,3 +25,9 @@ docker run -d --name bazaar-bot \
   communityfirst/bazaar-bot
 ```
 Or Rename the `.env.sample` file to `.env` and edit it with needed configuration.
+
+### Using docker-compose
+
+Copy and edit the `.env.compose` file: `cp .env.compose .env`
+
+Now just run `docker-compose up -d` to run it detached.
